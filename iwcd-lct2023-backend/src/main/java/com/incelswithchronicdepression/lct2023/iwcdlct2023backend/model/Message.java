@@ -2,6 +2,8 @@ package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.enumerators.SenderType;
 
 import jakarta.persistence.Column;
@@ -38,14 +40,18 @@ public class Message {
     private String text;
 
     @Column(name = "time")
+    @ColumnDefault("CURRENT_TIMESTAMP")
     private LocalDateTime time;
 
     @Column(name = "sender")
     @Enumerated(EnumType.ORDINAL)
     private SenderType senderType;
 
-    @Column(name = "last_edited")
+    @Column(name = "last_edited", nullable = true)
     private LocalDateTime lastEdited;
+
+    @Column(name = "intent_class", nullable = true)
+    private String intentClass;
 
     private Message() {}
 
@@ -75,5 +81,9 @@ public class Message {
 
     public LocalDateTime getLastEdited() {
         return this.lastEdited;
+    }
+
+    public String getIntentClass() {
+        return this.intentClass;
     }
 }
