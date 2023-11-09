@@ -24,12 +24,14 @@ public class UserController {
 
     @GetMapping("/users/all")
     public List<User> getAllUsers() {
-        return repo.findAll();
+        List<User> users = repo.findAll();
+        log.info("[/users/all] Returning all users ({} total)", users.size());
+        return users;
     }
 
     @PostMapping("/users/add")
     public void addUser(@RequestBody User user) {
-        log.info("Added user {}", user);
+        log.info("[/users/add] Added new user: {}", user);
         repo.save(user);
     }
 }

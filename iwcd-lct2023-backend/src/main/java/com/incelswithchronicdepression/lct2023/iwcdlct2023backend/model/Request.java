@@ -20,7 +20,7 @@ public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "start")
     private LocalDateTime start;

@@ -16,7 +16,7 @@ public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "offer_text")
     private String offerText;

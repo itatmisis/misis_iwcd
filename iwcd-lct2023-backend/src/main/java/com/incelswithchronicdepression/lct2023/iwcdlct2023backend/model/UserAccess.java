@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.hibernate.annotations.ColumnDefault;
 
 import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.enumerators.SenderType;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.repo.UserRepo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,9 +27,13 @@ import lombok.Data;
 public class UserAccess {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
+
     @OneToOne
     @JoinColumn(name = "user_id")
-    private User userId;
+    private User user;
 
     @Column(name = "access")
     @ColumnDefault("false")
@@ -39,7 +44,10 @@ public class UserAccess {
 
     private UserAccess() {}
 
-    public UserAccess(boolean access, LocalDateTime stopTimestamp) {
+    UserRepo userRepo;
+
+    public UserAccess(Long userId, boolean access, LocalDateTime stopTimestamp) {
+        this.user = userRepo.findById(userId).orElseThrow();
         this.access = access;
         this.stopTimestamp = stopTimestamp;
     }
