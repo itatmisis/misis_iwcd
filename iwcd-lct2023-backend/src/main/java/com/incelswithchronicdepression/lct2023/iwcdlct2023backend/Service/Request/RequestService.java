@@ -12,5 +12,7 @@ public interface RequestService {
 
     List<Request> findAllRequests();
 
-    Optional<Request> findRequestById(Long id);
+    Optional<Request> findGetRequestById(Long id);
+
+    JSONObject findPatchRequestById(Long id);
 }
