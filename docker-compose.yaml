@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./path/to/your/reactjs/Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - springboot-backend
+      - fastapi-backend
+
+  springboot-backend:
+    build: ./path/to/your/springboot/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - fastapi-backend
+
+  fastapi-backend:
+    build: ./ML/Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    ports:
+      - "15432:5432"
+    environment:
+      - 'POSTGRES_DB=iwcd_lct_2023_backend'
+      - 'POSTGRES_PASSWORD=XGXpZEo52TP2RFe43CjU9yxAJ'
+      - 'POSTGRES_USER=iwcd_rw'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
