@@ -7,8 +7,11 @@
 ## Стек
 
 Backend — `Java`, `SpringBoot`
+
 DB — `PostgeSQL`
+
 Frontend — `Javascript`, `React.js`
+
 ML — `Python`
 
 ## Как начать работу
