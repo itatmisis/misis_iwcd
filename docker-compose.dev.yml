@@ -32,6 +32,12 @@ services:
       - "./ml-models/gazprom_model:/model/app/models:ro"
     depends_on:
       - db-dev
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.fastapi-backend-iwcd.loadbalancer.server.port=3333"
+      - "traefik.http.routers.fastapi-backend-iwcd.rule=Host(`fastapi-backend-iwcd.seizure.icu`)"
+      - "traefik.http.routers.fastapi-backend-iwcd.entrypoints=websecure"
+      - "traefik.http.routers.fastapi-backend-iwcd.tls=true"
 
   db-dev:
     image: postgres:15

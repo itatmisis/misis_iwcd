@@ -10,9 +10,9 @@ RUN pip install -r requirements.txt
 # Compile Python 3 source code into bytecode
 RUN python3 -m compileall .
 
-# Create a folder for ml models
-RUN mkdir ./app/models
-
-# Run your app
 COPY . .
+
+# Create a folder for ml models
+RUN mkdir -p ./app/models
+
 CMD [ "python3.11", "-m", "app" ]
