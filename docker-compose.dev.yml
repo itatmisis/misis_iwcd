@@ -7,7 +7,7 @@ services:
   frontend:  # TODO: Change
     build: ./path/to/your/reactjs/Dockerfile
     ports:
-      - "8000:3000"
+      - "3000:3000"
     depends_on:
       - springboot-backend
       - fastapi-backend
@@ -17,7 +17,7 @@ services:
       dockerfile: ./iwcd-lct2023-backend/Dockerfile
       context: ./iwcd-lct2023-backend
     ports:
-      - "8001:8080"
+      - "8080:8080"
     depends_on:
       - db
       - fastapi-backend
@@ -26,11 +26,15 @@ services:
     build:
       dockerfile: ./ML/Dockerfile
       context: ./ML/model
+    ports:
+      - "3333:3333"  # Check proper port number
     depends_on:
       - db
 
   db:
     image: postgres:15
+    ports:
+      - "15432:5432"
     env_file: ./.env
     volumes:
       - postgres_data:/var/lib/postgresql/data
