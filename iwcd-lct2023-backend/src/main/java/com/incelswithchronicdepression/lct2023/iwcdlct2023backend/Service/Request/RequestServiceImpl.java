@@ -1,8 +1,8 @@
 package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Service.Request;
 
 import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Service.UserAction.UserActionServiceImpl;
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model.Request;
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.repo.RequestRepo;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Entity.Request;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Repository.RequestRepository;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +13,11 @@ import java.util.Optional;
 @Service
 public class RequestServiceImpl implements RequestService{
 
-    private final RequestRepo requestRepo;
+    private final RequestRepository requestRepo;
     private final UserActionServiceImpl userActionService;
 
     @Autowired
-    public RequestServiceImpl(RequestRepo requestRepo, UserActionServiceImpl userActionService) {
+    public RequestServiceImpl(RequestRepository requestRepo, UserActionServiceImpl userActionService) {
         this.requestRepo = requestRepo;
         this.userActionService = userActionService;
     }

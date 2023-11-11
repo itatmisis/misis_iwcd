@@ -1,17 +1,17 @@
 package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Service.UserAction;
 
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model.Request;
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.repo.UserActionsRepo;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Entity.Request;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Repository.UserActionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserActionServiceImpl implements UserActionService {
 
-    private final UserActionsRepo userActionsRepo;
+    private final UserActionsRepository userActionsRepo;
 
     @Autowired
-    public UserActionServiceImpl(UserActionsRepo userActionsRepo) {
+    public UserActionServiceImpl(UserActionsRepository userActionsRepo) {
         this.userActionsRepo = userActionsRepo;
     }
 

@@ -1,7 +1,7 @@
-package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.controller;
+package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Controller;
 
 import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Service.Request.RequestServiceImpl;
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model.Request;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Entity.Request;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

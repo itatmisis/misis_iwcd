@@ -1,4 +1,4 @@
-package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model;
+package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Entity;
 
 import java.time.LocalDateTime;
 
