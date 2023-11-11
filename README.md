@@ -93,4 +93,10 @@ ML — `Python`
 
 ## Веб-сайт
 
-Протестировать наш сервис без локального развертывания можно по данной [ссылке](TODO)
+Протестировать наш сервис без локального развертывания можно по данной [ссылке](https://iwcd.seizure.icu/).
+
+Все ссылки:
+
+- [Frontend](https://iwcd.seizure.icu/)
+- [Backend (Swagger UI)](https://backend-iwcd.seizure.icu/swagger-ui.html)
+- [ML Model](https://fastapi-backend-iwcd.seizure.icu/)
