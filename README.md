@@ -13,7 +13,7 @@ ML — `Python`
 
 ## Как начать работу
 
-### Локальное развертывание
+### Локальное развертывание (Production)
 
 Чтобы локально нужно:
 
@@ -37,6 +37,12 @@ ML — `Python`
 7. Ввести в консоль команду
 
     ```bash
+        make run
+    ```
+
+    Если на вашей машине нет GNU Make, то воспользуйтесь следующей командой
+
+    ```bash
         docker compose up -d
     ```
 
@@ -46,17 +52,38 @@ ML — `Python`
         docker-compose up -d
     ```
 
-8. Посмотрите на наш [frontend](http://localhost:8000) и [backend (Swagger UI)](http://localhost:8001/swagger-ui.html)
+8. Посмотреть на наш [frontend](http://localhost:8000) и [backend (Swagger UI)](http://localhost:8001/swagger-ui.html)
 
-#### Dev Docker Compose файл
+#### Development Docker Compose файл
 
 Чтобы запустить сервисы с пробросом всех портов, выполните следующую команду:
+
+```bash
+    make run-dev
+```
+
+Если на вашей машине нет GNU Make, то воспользуйтесь следующей командой (убедитесь, что у вас не работает версия из `docker-compose.yml`):
 
 ```bash
     docker-compose -f docker-compose.dev.yml up -d
 ```
 
 Порт-маппинги можно найти в файле `docker-compose.dev.yml`.
+
+#### Отключение всех сервисов
+
+Чтобы отключить все сервисы на вашей локальной машине, выполните следующую команду:
+
+```bash
+    make down
+```
+
+Если на вашей машине нет GNU Make, то воспользуйтесь следующей командой:
+
+```bash
+    docker-compose -f docker-compose.yml down && \
+    docker-compose -f docker-compose.dev.yml down
+```
 
 ## Веб-сайт
 
