@@ -1,10 +1,10 @@
 version: '3.8'
 
 volumes:
-  postgres_data:
+  db_data_dev:
 
 services:
-  frontend:  # TODO: Change
+  frontend-dev:  # TODO: Change
     build: ./path/to/your/reactjs/Dockerfile
     ports:
       - "3000:3000"
@@ -12,7 +12,7 @@ services:
       - springboot-backend
       - fastapi-backend
 
-  springboot-backend:
+  springboot-backend-dev:
     build:
       dockerfile: ./iwcd-lct2023-backend/Dockerfile
       context: ./iwcd-lct2023-backend
@@ -22,7 +22,7 @@ services:
       - db
       - fastapi-backend
 
-  fastapi-backend:
+  fastapi-backend-dev:
     build:
       dockerfile: ./ML/Dockerfile
       context: ./ML/model
@@ -31,10 +31,10 @@ services:
     depends_on:
       - db
 
-  db:
+  db-dev:
     image: postgres:15
     ports:
       - "15432:5432"
     env_file: ./.env
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - "db_data_dev:/var/lib/postgresql/data"

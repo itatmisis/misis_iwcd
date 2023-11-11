@@ -12,8 +12,8 @@ env:
 	@echo "Please edit .env file"
 
 run: --check-env
-	@echo "Ensuring that the Dev version is down..."
-	docker-compose -f docker-compose.dev.yml down
+	# @echo "Ensuring that the Dev version is down..."
+	# docker-compose -f docker-compose.dev.yml down
 	@echo "Starting the Prd version..."
 	docker-compose -f docker-compose.yml up --build -d
 
@@ -21,8 +21,8 @@ logs:
 	docker-compose -f docker-compose.yml logs -f
 
 run-dev: --check-env
-	@echo "Ensuring that the Prd version is down..."
-	docker-compose -f docker-compose.yml down
+	# @echo "Ensuring that the Prd version is down..."
+	# docker-compose -f docker-compose.yml down
 	@echo "Starting the Dev version..."
 	docker-compose -f docker-compose.dev.yml up --build -d
 

@@ -62,7 +62,7 @@ ML — `Python`
     make run-dev
 ```
 
-Если на вашей машине нет GNU Make, то воспользуйтесь следующей командой (убедитесь, что у вас не работает версия из `docker-compose.yml`):
+Если на вашей машине нет GNU Make, то воспользуйтесь следующей командой:
 
 ```bash
     docker-compose -f docker-compose.dev.yml up -d

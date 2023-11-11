@@ -1,7 +1,7 @@
 version: '3.8'
 
 volumes:
-  postgres_data:
+  db_data:
 
 services:
   frontend:  # TODO: Change
@@ -33,4 +33,4 @@ services:
     image: postgres:15
     env_file: ./.env
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - "db_data:/var/lib/postgresql/data"
