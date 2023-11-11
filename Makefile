@@ -8,7 +8,7 @@
 	fi
 
 env:
-	cp ./env.example ./.env
+	cp ./.env.example ./.env
 	@echo "Please edit .env file"
 
 download:
