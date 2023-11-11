@@ -1,4 +1,4 @@
-.PHONY: env download run logs run-dev logs-dev down
+.PHONY: env download build build-dev run logs run-dev logs-dev down
 
 --check-env:
 	# Check if .env file exists. If not, refuse to run.
@@ -16,6 +16,14 @@ download:
 	chmod +x ./scripts/download-ml-models.sh
 	@echo "Downloading ML models using the download script..."
 	./scripts/download-ml-models.sh
+
+build: --check-env
+	@echo "Building the Prd version..."
+	docker-compose -f docker-compose.yml build
+
+build-dev: --check-env
+	@echo "Building the Dev version..."
+	docker-compose -f docker-compose.dev.yml build
 
 run: --check-env
 	# @echo "Ensuring that the Dev version is down..."

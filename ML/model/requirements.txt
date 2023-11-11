@@ -1,4 +1,4 @@
-adapter-transformers @ git+https://github.com/Adapter-Hub/adapter-transformers.git@514bff83dfb5e9fdd11fc0cec6a5e75b65ab786e
+adapter-transformers@git+https://github.com/Adapter-Hub/adapter-transformers.git@514bff83dfb5e9fdd11fc0cec6a5e75b65ab786e
 annotated-types==0.6.0
 anyio==3.7.1
 certifi==2023.7.22

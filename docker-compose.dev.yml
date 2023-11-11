@@ -4,34 +4,34 @@ volumes:
   db_data_dev:
 
 services:
-  frontend-dev:  # TODO: Change
-    build: ./path/to/your/reactjs/Dockerfile
-    ports:
-      - "3000:3000"
-    depends_on:
-      - springboot-backend
-      - fastapi-backend
+  # frontend-dev:  # TODO: Change
+  #   build: ./path/to/your/reactjs/Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - springboot-backend-dev
+  #     - fastapi-backend-dev
 
-  springboot-backend-dev:
-    build:
-      dockerfile: ./iwcd-lct2023-backend/Dockerfile
-      context: ./iwcd-lct2023-backend
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
-      - fastapi-backend
+  # springboot-backend-dev:
+  #   build:
+  #     dockerfile: ./iwcd-lct2023-backend/Dockerfile
+  #     context: ./iwcd-lct2023-backend
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - db-dev
+  #     - fastapi-backend-dev
 
   fastapi-backend-dev:
     build:
-      dockerfile: ./ML/Dockerfile
+      dockerfile: ../Dockerfile
       context: ./ML/model
     ports:
       - "3333:3333"  # Check proper port number
     volumes:
       - "./ml-models/gazprom_model:/model/app/models:ro"
     depends_on:
-      - db
+      - db-dev
 
   db-dev:
     image: postgres:15
