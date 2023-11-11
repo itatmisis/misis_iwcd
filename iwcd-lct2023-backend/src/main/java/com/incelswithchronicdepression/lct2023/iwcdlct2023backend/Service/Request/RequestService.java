@@ -1,6 +1,6 @@
 package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Service.Request;
 
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model.Request;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Entity.Request;
 import org.json.JSONObject;
 
 import java.util.List;
@@ -12,5 +12,7 @@ public interface RequestService {
 
     List<Request> findAllRequests();
 
-    Optional<Request> findRequestById(Long id);
+    Optional<Request> findGetRequestById(Long id);
+
+    JSONObject findPatchRequestById(Long id);
 }

@@ -1,10 +1,10 @@
-package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model;
+package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Entity;
 
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.enumerators.SenderType;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Enumerator.SenderType;
 
 import javax.persistence.*;
 import lombok.Data;

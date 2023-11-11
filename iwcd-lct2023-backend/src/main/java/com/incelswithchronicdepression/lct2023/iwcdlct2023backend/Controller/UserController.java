@@ -1,4 +1,4 @@
-package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.controller;
+package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Controller;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model.User;
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Entity.User;
 
 import org.springframework.web.bind.annotation.RequestBody;
 
