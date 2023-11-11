@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"allowUnreachableCode": false,
+		"allowSyntheticDefaultImports": true,
+		"alwaysStrict": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"jsx": "react",
+		"lib": ["es2020", "dom"],
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "es5",
+		"types": ["vite/client", "node"],
+		"baseUrl": "./",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@containers/*": ["src/containers/*"],
+			"@pages/*": ["src/pages/*"],
+			"@ui/*": ["src/UI/*"],
+			"@utils/*": ["src/utils/*"],
+			"@actions/*": ["src/actions/*"],
+			"@api/*": ["src/api/*"]
+		}
+	},
+	"include": ["src/**/*", "src/declaration.d.ts"]
+}

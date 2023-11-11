@@ -1,4 +1,4 @@
-FROM arm64v8/openjdk:15-slim AS build
+FROM openjdk:15-jdk-alpine AS build
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ COPY --chown=app:app . .
 RUN ./gradlew build -x test
 
 ######################
-FROM arm64v8/openjdk:15-slim
+FROM openjdk:15-jdk-alpine
 LABEL maintainer="iwcd.itatmisis.ru"
 
 ARG VERSION="0.0.1"

@@ -12,15 +12,21 @@ services:
   #     - springboot-backend-dev
   #     - fastapi-backend-dev
 
-  # springboot-backend-dev:
-  #   build:
-  #     dockerfile: ./iwcd-lct2023-backend/Dockerfile
-  #     context: ./iwcd-lct2023-backend
-  #   ports:
-  #     - "8080:8080"
-  #   depends_on:
-  #     - db-dev
-  #     - fastapi-backend-dev
+  springboot-backend-dev:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./iwcd-lct2023-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db-dev
+      - fastapi-backend-dev
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.backend-iwcd.loadbalancer.server.port=8080"
+      - "traefik.http.routers.backend-iwcd.rule=Host(`backend-iwcd.seizure.icu`)"
+      - "traefik.http.routers.backend-iwcd.entrypoints=websecure"
+      - "traefik.http.routers.backend-iwcd.tls=true"
 
   fastapi-backend-dev:
     build:
