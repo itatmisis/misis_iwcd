@@ -42,7 +42,7 @@ public class Request {
     @Column(name = "comment")
     private String comment;
 
-    private Request() {}
+    public Request() {}
 
     public Request(LocalDateTime start, LocalDateTime stop, boolean isSuccess, String text) {
         this.start = start;
