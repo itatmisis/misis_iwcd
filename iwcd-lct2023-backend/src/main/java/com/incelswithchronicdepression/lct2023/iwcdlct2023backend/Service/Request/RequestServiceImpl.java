@@ -1,5 +1,6 @@
 package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.Service.Request;
 
+import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model.Request;
 import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.repo.RequestRepo;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,10 @@ public class RequestServiceImpl implements RequestService{
         jsonObject.append("unlabeled", unlabeled);
 
         return jsonObject;
+    }
+
+    @Override
+    public List<Request> findAllRequests() {
+        return requestRepo.findAll();
     }
 }
