@@ -13,7 +13,7 @@ async def model_response(messages: List[Dict]):
     summary_toxicity = 0
     summary_text = ""
     for message in messages:
-        if message["sender"] == False:
+        if message["sender"] is False:
             toxicity = predictor.toxicity_model.text2toxicity(message["text"])
             number = predictor.toxicity_model.probability_to_number(toxicity)
             summary_toxicity += -1 * number
@@ -23,7 +23,7 @@ async def model_response(messages: List[Dict]):
             continue
     intent = predictor.intent_model.get_response(summary_text)
     toxicity = summary_toxicity / len(
-        [message for message in messages if message["sender"] == False]
+        [message for message in messages if message["sender"] is False]
     )
 
     offer_possibility = False
