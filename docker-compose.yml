@@ -32,7 +32,7 @@ services:
       - db
 
   db:
-    image: postgres:latest
+    image: postgres:15
     ports:
       - "15432:5432"
     env_file: ./.env
