@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RequestController {
@@ -36,4 +38,11 @@ public class RequestController {
         List<Request> list = requestService.findAllRequests();
         return new ResponseEntity(list, HttpStatus.OK);
     }
+
+    @GetMapping("/api/requests")
+    public ResponseEntity getRequestById(@RequestParam Long request_id){
+        Optional<Request> request = requestService.findRequestById(request_id);
+        return request.isPresent() ? new ResponseEntity(request.get(), HttpStatus.OK) : new ResponseEntity(null, HttpStatus.NOT_FOUND);
+    }
+
 }

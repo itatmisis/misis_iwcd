@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RequestServiceImpl implements RequestService{
@@ -39,5 +40,10 @@ public class RequestServiceImpl implements RequestService{
     @Override
     public List<Request> findAllRequests() {
         return requestRepo.findAll();
+    }
+
+    @Override
+    public Optional<Request> findRequestById(Long id) {
+        return requestRepo.findById(id);
     }
 }
