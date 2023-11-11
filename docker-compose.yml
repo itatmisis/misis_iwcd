@@ -26,6 +26,8 @@ services:
     build:
       dockerfile: ./ML/Dockerfile
       context: ./ML/model
+    volumes:
+      - "./ml-models/gazprom_model:/model/app/models:ro"
     depends_on:
       - db
 

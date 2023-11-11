@@ -1,4 +1,4 @@
-.PHONY: env run logs run-dev logs-dev down
+.PHONY: env download run logs run-dev logs-dev down
 
 --check-env:
 	# Check if .env file exists. If not, refuse to run.
@@ -10,6 +10,12 @@
 env:
 	cp ./env.example ./.env
 	@echo "Please edit .env file"
+
+download:
+	@echo "Ensuring correct permission on the download script..."
+	chmod +x ./scripts/download-ml-models.sh
+	@echo "Downloading ML models using the download script..."
+	./scripts/download-ml-models.sh
 
 run: --check-env
 	# @echo "Ensuring that the Dev version is down..."

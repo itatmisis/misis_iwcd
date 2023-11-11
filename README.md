@@ -28,7 +28,10 @@ ML — `Python`
 
 2. Загрузить модели машинного обучения по данной [ссылке](https://drive.google.com/drive/folders/1smXcT4-RUJ2KZnRSBb66snQMQmmmmZ3l?usp=sharing)
 3. Разархивировать загруженные модели
-4. Папку 'gazprom_model' переместить по пути misis_iwcd/ML/model/app
+4. Содержимое папки 'gazprom_model' переместить по пути `misis_iwcd/ml-models`
+
+    P.S. вместо шагов 2, 3, 4 можно использовать команду `make download`
+
 5. Перейти в корневую папку misis_iwcd
 6. Скопировать файл `.env.example` в `.env` и заполнить переменные окружения
 

@@ -5,7 +5,7 @@ from app.main_prediction import Predictor
 
 router = APIRouter()
 
-predictor = Predictor("./app/gazprom_model/")
+predictor = Predictor("./app/models")
 
 
 @router.post("/model")

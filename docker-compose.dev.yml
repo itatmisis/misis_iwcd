@@ -28,6 +28,8 @@ services:
       context: ./ML/model
     ports:
       - "3333:3333"  # Check proper port number
+    volumes:
+      - "./ml-models/gazprom_model:/model/app/models:ro"
     depends_on:
       - db
 
