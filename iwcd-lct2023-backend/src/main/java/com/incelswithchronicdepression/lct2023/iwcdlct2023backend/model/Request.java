@@ -2,14 +2,9 @@ package com.incelswithchronicdepression.lct2023.iwcdlct2023backend.model;
 
 import java.time.LocalDateTime;
 
-// import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.ColumnDefault;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import lombok.Data;
 
 @Data

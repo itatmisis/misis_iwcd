@@ -4,20 +4,11 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.enumerators.SenderType;
 import com.incelswithchronicdepression.lct2023.iwcdlct2023backend.repo.UserRepo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-// import jakarta.persistence.EnumType;
-// import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Data
 @Entity
@@ -29,7 +20,7 @@ public class UserAccess {
     @Column(name = "id")
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -40,12 +31,8 @@ public class UserAccess {
     @Column(name = "stop_timestamp")
     private LocalDateTime stopTimestamp;
 
-    private UserAccess() {}
-
-    UserRepo userRepo;
-
-    public UserAccess(Long userId, boolean access, LocalDateTime stopTimestamp) {
-        this.user = userRepo.findById(userId).orElseThrow();
+    public UserAccess(User user, boolean access, LocalDateTime stopTimestamp) {
+        this.user = user;
         this.access = access;
         this.stopTimestamp = stopTimestamp;
     }
