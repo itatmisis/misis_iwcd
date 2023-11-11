@@ -1,5 +1,5 @@
-from intent_classifier import Adapter
-from toxicity_analyzer import ToxicityClassifier
+from app.intent_classifier import Adapter
+from app.toxicity_analyzer import ToxicityClassifier
 
 ex_input = [{'text': 'Мне нужно карту оформить', 'label': None}]
 
