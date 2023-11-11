@@ -40,11 +40,23 @@ ML — `Python`
         docker compose up -d
     ```
 
-Если команда не работает, у вас более старая версия Docker. Попробуйте следующее:
+    Если команда не работает, у вас более старая версия Docker. Попробуйте следующее:
+
+    ```bash
+        docker-compose up -d
+    ```
+
+8. Посмотрите на наш [frontend](http://localhost:8000) и [backend (Swagger UI)](http://localhost:8001/swagger-ui.html)
+
+#### Dev Docker Compose файл
+
+Чтобы запустить сервисы с пробросом всех портов, выполните следующую команду:
 
 ```bash
-docker-compose up -d
+    docker-compose -f docker-compose.dev.yml up -d
 ```
+
+Порт-маппинги можно найти в файле `docker-compose.dev.yml`.
 
 ## Веб-сайт
 
